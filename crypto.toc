@@ -1,3 +1,14 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
 \contentsline {section}{\numberline {1}Introduzione}{1}
+\contentsline {paragraph}{Tipologie di cifratura}{2}
+\contentsline {section}{\numberline {2}Teoria dei numeri}{2}
+\contentsline {subsection}{\numberline {2.1}Divisibilit\IeC {\`a}}{2}
+\contentsline {paragraph}{Definizione}{2}
+\contentsline {paragraph}{Propriet\IeC {\`a}}{2}
+\contentsline {subsection}{\numberline {2.2}Teorema dei numeri primi}{3}
+\contentsline {subsection}{\numberline {2.3}Teorema fondamentale dell'aritmetica}{3}
+\contentsline {paragraph}{Enunciato}{3}
+\contentsline {paragraph}{Definizione}{3}
+\contentsline {paragraph}{Algoritmo di Eulero}{3}
+\contentsline {paragraph}{Identit\IeC {\`a} di Bezout}{3}

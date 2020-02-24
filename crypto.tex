@@ -4,16 +4,66 @@
 
 \documentclass[12pt]{article}
 \usepackage[italian]{babel}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usetikzlibrary{positioning}
 \begin{document}
 \maketitle
 \tableofcontents
-\begin{abstract}
-Appunti del corso di Crittografia e Combinatoria - AA 2019-2020
-\end{abstract}
 
 \section{Introduzione}
-Buonasera
-
+La \textbf{crittologia} è lo studio dei metodi per mantenere sicure le comunicazioni che avvengono in un canale \textit{non sicuro}. \\
+Essa si suddivide in \textbf{crittografia}, che studia la progettazione di tali metodi, e \textbf{crittanalisi}, che invece si occupa di infrangerli.
+\begin{center}
+\begin{tikzpicture}
+\matrix [column sep=7mm, row sep=5mm] {
+&
+  \node (yw) [draw, shape=rectangle] {Crittologia}; \\
+  \node (we) [draw, shape=rectangle] {Crittografia}; & &
+  \node (pu) [draw, shape=rectangle] {Crittanalisi}; \\
+};
+\draw[->, thick] (yw) -- (we);
+\draw[->, thick] (yw) -- (pu);
+\end{tikzpicture}
+\end{center}
+In generale in una comunicazione un messaggio \textbf{m} viene cifrato all'origine attraverso un algoritmo di cifratura \textbf{\(ENC\)} e una chiave di cifratura \textbf{\textit{k}} e viene decifrato alla destinazione con un algoritmo di decifratura \textbf{\(DEC\)} (idealmente \(ENC^{-1}\)) e una chiave di decifratura \textbf{\textit{k}}. L'algoritmo di cifratura è solitamente noto a tutte le parti, ma è la chiave ad essere segreta.
+\[ENC(m,k)=c\]
+\[DEC(c,k)=m\]
+Ipotizzando una comunicazione tra Alice e Bob, dove entrambi possiedono le chiavi di cifratura, un soggetto esterno malintenzionato, Eve (a.k.a. Evil), potrebbe:
+\begin{itemize}
+\item leggere il messaggio;
+\item trovare la chiave e quindi decifrare tutti i messaggi scambiati tra Alice e Bob;
+\item alterare un messaggio in modo tale da far sembrare che sia effettivamente spedito da una delle due parti;
+\item fingersi una delle due parti.
+\end{itemize}
+\paragraph{Tipologie di cifratura}
+Esistono principalmente due tipologie di cifratura:
+\begin{itemize}
+\item la cifratura \textbf{simmetrica}, in cui la chiave di cifratura è identica alla chiave di decifratura;
+\item la cifratura \textbf{asimmetrica}, in cui la chiave di cifratura (generalmente pubblica) è differente dalla chiave di decifratura (privata).
+\end{itemize}
+\section{Teoria dei numeri}
+\subsection{Divisibilità}
+\paragraph{Definizione}
+\textit{Siano $a,b\in \mathbb{N}$, con $a\neq 0$, si dice che a divide b $(a|b)$ se esiste $k\in \mathbb{N}$} tale che $b=ak$. In altre parole, b è un multiplo di a.
+\paragraph{Proprietà} (dimostrazioni\footnote{[Trappe p.64]})
+\begin{itemize}
+\item $a|a$
+\item $a|0$
+\item $1|b$
+\item se $a|b$ e $b|c$, allora $a|c$
+\item se $a|b$ e $a|c$, allora $a|(sb + tc)$, con $s,t\in \mathbb{N}$
+\end{itemize}
+\subsection{Teorema dei numeri primi}
+\textit{Sia $\Pi (x)$ la quantità di numeri primi $<x$,} definita $\Pi (x) \simeq \frac{x}{\ln{(x)}}$,
+$$\Rightarrow \lim_{x\to\infty} \frac{\Pi (x)\ln{(x)}}{x}.$$
+\subsection{Teorema fondamentale dell'aritmetica}
+\paragraph{Enunciato} \textit{Ogni numero $n\in \mathbb{N}$ è un prodotto di numeri primi.}
+$$n=p_1^{\alpha _1}p_2^{\alpha _2}\cdots p_s^{\alpha _s}$$
+Si dice \textbf{fattorizzazione} la ricerca di tale insieme di numeri primi.
+\paragraph{Definizione} \textit{Si dice Massimo Comun Divisore tra a e b, il più grande numero intero che divide a e b $[gcd(a,b)]$.}
+\paragraph{Algoritmo di Eulero}
+\paragraph{Identità di Bezout}
 
 
 

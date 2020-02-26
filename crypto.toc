@@ -16,3 +16,8 @@
 \contentsline {paragraph}{Esempio}{4}
 \contentsline {subsubsection}{\numberline {2.3.2}Identit\IeC {\`a} di Bezout}{4}
 \contentsline {paragraph}{Enunciato}{4}
+\contentsline {paragraph}{Esercizio}{6}
+\contentsline {section}{\numberline {3}Aritmetica Modulare}{6}
+\contentsline {subsection}{\numberline {3.1}Congruenze}{6}
+\contentsline {paragraph}{Teorema}{6}
+\contentsline {paragraph}{Propriet\IeC {\`a}}{6}

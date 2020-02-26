@@ -51,11 +51,11 @@ Esistono principalmente due tipologie di cifratura:
 \textit{Siano $a,b\in \mathbb{Z}$, con $a\neq 0$, si dice che a divide b $(a\mid b)$ se esiste $k\in \mathbb{Z}$} tale che $b=ak$. In altre parole, b è un multiplo di a.
 \paragraph{Proprietà} (dimostrazioni\footnote{[Trappe p.64]})
 \begin{itemize}
-\item $a\mid a$
-\item $a\mid 0$
-\item $1\mid b$
-\item se $a\mid b$ e $b\mid c$, allora $a\mid c$
-\item se $a\mid b$ e $a\mid c$, allora $a\mid (sb + tc)$, con $s,t\in \mathbb{Z}$
+\item $a\mid a$;
+\item $a\mid 0$;
+\item $1\mid b$;
+\item se $a\mid b$ e $b\mid c$, allora $a\mid c$;
+\item se $a\mid b$ e $a\mid c$, allora $a\mid (sb + tc)$, con $s,t\in \mathbb{Z}$.
 \end{itemize}
 \paragraph{Esempi}
 $$15\mid 60,\quad 2\mid 8,\quad 4\nmid 15$$
@@ -71,9 +71,9 @@ Si dice \textbf{fattorizzazione} la ricerca di tale insieme di numeri primi.
 \subsubsection{Algoritmo Euclideo} Oltre al classico metodo di scomposizione in fattori primi, la ricerca del massimo comun divisore tra due numeri interi è possibile attraverso il cosiddetto Algoritmo Euclideo, di natura iterativa.
 
 Supponendo di voler calcolare $gcd(r_0,r_1)$, con $r_0>r_1$, si può scrivere iterativamente:
-$$r_0=r_1\cdot q_2 + r_2$$
-$$r_1=r_2\cdot q_3 + r_3$$
-$$r_2=r_3\cdot q_4 + r_4$$
+$$r_0=r_1\cdot q_1 + r_2$$
+$$r_1=r_2\cdot q_2 + r_3$$
+$$r_2=r_3\cdot q_3 + r_4$$
 $$\vdots$$
 dove $r_n$ e $q_n$ sono rispettivamente il resto e il quoziente della divisione tra $r_{n-1}$ e $r_{n-2}$.
 $$gcd(r_0,r_1)=r_n \Leftrightarrow r_{n+1}=0$$
@@ -90,7 +90,7 @@ Il resto appena precedente a $r=0$ è $r=2$, quindi $gcd(1180,482)=2$.
 \paragraph{Enunciato} \textit{Siano $a,b \in \mathbb{Z}$, dove almeno uno tra a e b è diverso da 0 $\Rightarrow \exists x,y \in \mathbb{Z}: ax+by=gcd(a,b)$.}
 
 Per individuare i valori $x,y$ che soddisfano l'identità di Bezout, si scrivono le espressioni dei resti a partire dalle iterazioni dell'algoritmo Euclideo
-$$r_n=r_{n-2}-r_{n-1}\cdot q_n$$
+$$r_n=r_{n-2}-r_{n-1}\cdot q_{n-1}$$
 e si sostituiscono a ritroso, svolgendo i calcoli, fino ad arrivare alla prima iterazione. In riferimento al $gcd(1180,482)$, bisogna trovare i valori $x,y: 1180x+482y=gcd(1180,482)=2$:
 
 $$216=1180-482\cdot 2$$
@@ -105,6 +105,45 @@ $$2=13\cdot 482 - 29\cdot (1180-482\cdot 2)=13\cdot 482-29\cdot 1180 + 58\cdot 4
 $$\Rightarrow - 1180\cdot 29 + 482\cdot 71 = 2 $$
 $$\Rightarrow (x,y)=(-29,71)$$
 
+In alternativa è possibile utilizzare il seguente algoritmo iterativo, dove $q_n$ è l'n-esimo quoziente dell'algoritmo Euclideo con $r_{n+1}\neq 0$:
+
+$$y_0=0$$
+$$y_1=1$$
+$$y_n=-q_{n-1}\cdot y_{n-1}+y_{n-1}$$
+
+da cui si ottiene, nell'esercizio in esame:
+
+$$y_0=0$$
+$$y_1=1$$
+$$y_2=-2$$
+$$y_3=-2\cdot (-2)+1=5$$
+$$y_4=-4\cdot5-2=-22$$
+$$y_5=-3\cdot (-22)+5=71$$
+$$\Rightarrow y=71$$
+
+Si ha quindi $1180\cdot x + 482\cdot 71 = 2$, da cui si ricava $x=-29$.
+
+\paragraph{Esercizio} Individuare $x,y:1234x+1111y=gcd(1234,1111)$.
+\section{Aritmetica Modulare}
+\subsection{Congruenze}
+\paragraph{Teorema}
+\textit{Siano $a,b\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\} $, si dice che $a\equiv b \mod{N} \Leftrightarrow \exists k\in \mathbb{Z}:a-b=kN$, cioè se e solo se $a-b$ è un multiplo di N.}
+\paragraph{Proprietà} Siano $a,b,c\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\} $:
+
+\begin{itemize}
+\item $a\equiv 0 \mod{N} \Leftrightarrow N\mid a$, cioè se $a=kN$;
+\item $a\equiv a\mod{N}$, cioè per $k=0$;
+\item $a\equiv b\mod{N} \Leftrightarrow b\equiv a\mod{N}$, cioè per $k_1=-k_2$;
+\item $a\equiv b\mod {N}, b\equiv c\mod{N} \Rightarrow a\equiv c\mod {N}$, cioè per $k_3=k_1-k_2$.
+\end{itemize}
+
+In altre parole, sia $a\in \mathbb{Z}$ un numero divisibile per $N$, esso si può scrivere come:
+$$a=kN+r$$
+con $k\in \mathbb{Z}$, dove $0\leq r < N$ è il resto della divisione per $N$. Si dice quindi che due numeri $a,b$ sono congruenti se e solo se hanno lo stesso resto se divisi per $N$.
+$$a=q_1\cdot N + r$$
+$$b=q_2\cdot N + r$$
+$$a-b=(q_1-q_2)\cdot N$$
+$$a-b=kN\Rightarrow a\equiv b\equiv r \mod{N}$$
 
 \end{document}
   

@@ -2,7 +2,7 @@
 \author{Amati Pierluigi}
 \date{\today}
 
-\documentclass[12pt]{article}
+\documentclass[a4paper]{report}
 \usepackage[italian]{babel}
 \usepackage{tikz}
 \usepackage{amsfonts}
@@ -13,7 +13,7 @@
 \maketitle
 \tableofcontents
 
-\section{Introduzione}
+\chapter{Introduzione}
 La \textbf{crittologia} è lo studio dei metodi per mantenere sicure le comunicazioni che avvengono in un canale \textit{non sicuro}.
 
 Essa si suddivide in \textbf{crittografia}, che studia la progettazione di tali metodi, e \textbf{crittanalisi}, che invece si occupa di infrangerli.
@@ -45,8 +45,8 @@ Esistono principalmente due tipologie di cifratura:
 \item la cifratura \textbf{simmetrica}, in cui la chiave di cifratura è identica alla chiave di decifratura;
 \item la cifratura \textbf{asimmetrica}, in cui la chiave di cifratura (generalmente pubblica) è differente dalla chiave di decifratura (privata).
 \end{itemize}
-\section{Teoria dei numeri}
-\subsection{Divisibilità}
+\chapter{Teoria dei numeri}
+\section{Divisibilità}
 \paragraph{Definizione}
 \textit{Siano $a,b\in \mathbb{Z}$, con $a\neq 0$, si dice che a divide b $(a\mid b)$ se esiste $k\in \mathbb{Z}$} tale che $b=ak$. In altre parole, b è un multiplo di a.
 \paragraph{Proprietà} (dimostrazioni\footnote{[Trappe p.64]})
@@ -59,16 +59,16 @@ Esistono principalmente due tipologie di cifratura:
 \end{itemize}
 \paragraph{Esempi}
 $$15\mid 60,\quad 2\mid 8,\quad 4\nmid 15$$
-\subsection{Teorema dei numeri primi}
+\section{Teorema dei numeri primi}
 \textit{Sia $\Pi (x)$ la quantità di numeri primi $<x$,} definita $\Pi (x) \simeq \frac{x}{\ln{(x)}}$,
 $$\Rightarrow \lim_{x\to\infty} \frac{\Pi (x)\ln{(x)}}{x}=1.$$
-\subsection{Teorema fondamentale dell'aritmetica}
+\section{Teorema fondamentale dell'aritmetica}
 \paragraph{Enunciato} \textit{Ogni numero $n\in \mathbb{Z}$ è un prodotto di numeri primi.}
 $$n=p_1^{\alpha _1}p_2^{\alpha _2}\cdots p_s^{\alpha _s}$$
 Si dice \textbf{fattorizzazione} la ricerca di tale insieme di numeri primi.
 \paragraph{Definizione} \textit{Si dice Massimo Comun Divisore tra a e b, il più grande numero intero che divide a e b $[gcd(a,b)]$.}
 \paragraph{Definizione} \textit{Dati $a,b\in \mathbb{Z}$, essi si dicono \textbf{co-primi} se e solo se $gcd(a,b)=1$.}
-\subsubsection{Algoritmo Euclideo} Oltre al classico metodo di scomposizione in fattori primi, la ricerca del massimo comun divisore tra due numeri interi è possibile attraverso il cosiddetto Algoritmo Euclideo, di natura iterativa.
+\subsection{Algoritmo Euclideo} Oltre al classico metodo di scomposizione in fattori primi, la ricerca del massimo comun divisore tra due numeri interi è possibile attraverso il cosiddetto Algoritmo Euclideo, di natura iterativa.
 
 Supponendo di voler calcolare $gcd(r_0,r_1)$, con $r_0>r_1$, si può scrivere iterativamente:
 $$r_0=r_1\cdot q_1 + r_2$$
@@ -86,7 +86,7 @@ $$216=50\cdot 4 + 16$$
 $$50=16\cdot 3 + 2$$
 $$16 = 2\cdot 8 + 0$$
 Il resto appena precedente a $r=0$ è $r=2$, quindi $gcd(1180,482)=2$.
-\subsubsection{Identità di Bezout}
+\subsection{Identità di Bezout}
 \paragraph{Enunciato} \textit{Siano $a,b \in \mathbb{Z}$, dove almeno uno tra a e b è diverso da 0 $\Rightarrow \exists x,y \in \mathbb{Z}: ax+by=gcd(a,b)$.}
 
 Per individuare i valori $x,y$ che soddisfano l'identità di Bezout, si scrivono le espressioni dei resti a partire dalle iterazioni dell'algoritmo Euclideo
@@ -124,8 +124,8 @@ $$\Rightarrow y=71$$
 Si ha quindi $1180\cdot x + 482\cdot 71 = 2$, da cui si ricava $x=-29$.
 
 \paragraph{Esercizio} Individuare $x,y:1234x+1111y=gcd(1234,1111)$.
-\section{Aritmetica Modulare}
-\subsection{Congruenze}
+\chapter{Aritmetica Modulare}
+\section{Congruenze}
 \paragraph{Teorema}
 \textit{Siano $a,b\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\} $, si dice che $a\equiv b \mod{N} \Leftrightarrow \exists k\in \mathbb{Z}:a-b=kN$, cioè se e solo se $a-b$ è un multiplo di N.}
 \paragraph{Proprietà} Siano $a,b,c\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\} $:
@@ -148,8 +148,21 @@ $$a-b=kN\Rightarrow a\equiv b\equiv r \mod{N}$$
 $$\mathbb{Z}_N=\{0,1,2,\cdots,N-1\}$$
 \paragraph{Lemma} \textit{Siano $a,b,c,d\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\} : a\equiv b, c\equiv d \mod{N}$}
 $$\Rightarrow a+c\equiv b+d,\quad a-c\equiv b-d,\quad a\cdot c\equiv b\cdot d \mod{N}$$
-\textit{per dimostrarlo si utilizzi la definizione di congruenza $a=b+kN$.}
-\subsection{Gruppi}
+per dimostrarlo si utilizzi la definizione di congruenza $a=b+kN$.
+
+\textit{Vale inoltre, dalla regola della moltiplicazione $a\cdot c\equiv b\cdot d \mod{N}$,}
+$$a^k\equiv b^k \mod{N}.$$
+\section{Divisione in $\mathbb{Z}_N$}
+\paragraph{Proposizione} 
+\textit{Siano $a,b,c\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\},\quad a\neq 0 $}:
+\begin{itemize}
+\item $ab\equiv ac \mod{aN} \Rightarrow b=c\mod{N}$, poiché se
+$$ab\equiv ac \mod{aN} \Rightarrow \exists k\in \mathbb{Z}: ab=kaN+ac\Rightarrow b=kN+c$$
+$$\Rightarrow b\equiv c \mod{N}$$
+\item $ab\equiv ac \mod{N}, gcd(a,N)=1 \Rightarrow b=c\mod{N}$, poiché
+$$(dimostrazione)$$
+\end{itemize}
+\section{Gruppi}
 \paragraph{Definizione} \textit{Definito un insieme $\mathbb{G} \neq \{\emptyset\}$ e un'operazione $*$ tale che $\forall a,b \in \mathbb{G}\Rightarrow a*b\in \mathbb{G}$, l'insieme $\mathbb{G}$ si dice \textbf{gruppo} rispetto all'operazione $*$ se:}
 \begin{itemize}
 \item $\exists e \in \mathbb{G}: a*e=e*a=a,\quad \forall a \in \mathbb{G}$;

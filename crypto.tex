@@ -6,13 +6,16 @@
 \usepackage[italian]{babel}
 \usepackage{tikz}
 \usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usetikzlibrary{positioning}
 \begin{document}
 \maketitle
 \tableofcontents
 
 \section{Introduzione}
-La \textbf{crittologia} è lo studio dei metodi per mantenere sicure le comunicazioni che avvengono in un canale \textit{non sicuro}. \\
+La \textbf{crittologia} è lo studio dei metodi per mantenere sicure le comunicazioni che avvengono in un canale \textit{non sicuro}.
+
 Essa si suddivide in \textbf{crittografia}, che studia la progettazione di tali metodi, e \textbf{crittanalisi}, che invece si occupa di infrangerli.
 \begin{center}
 \begin{tikzpicture}
@@ -45,26 +48,62 @@ Esistono principalmente due tipologie di cifratura:
 \section{Teoria dei numeri}
 \subsection{Divisibilità}
 \paragraph{Definizione}
-\textit{Siano $a,b\in \mathbb{N}$, con $a\neq 0$, si dice che a divide b $(a|b)$ se esiste $k\in \mathbb{N}$} tale che $b=ak$. In altre parole, b è un multiplo di a.
+\textit{Siano $a,b\in \mathbb{Z}$, con $a\neq 0$, si dice che a divide b $(a\mid b)$ se esiste $k\in \mathbb{Z}$} tale che $b=ak$. In altre parole, b è un multiplo di a.
 \paragraph{Proprietà} (dimostrazioni\footnote{[Trappe p.64]})
 \begin{itemize}
-\item $a|a$
-\item $a|0$
-\item $1|b$
-\item se $a|b$ e $b|c$, allora $a|c$
-\item se $a|b$ e $a|c$, allora $a|(sb + tc)$, con $s,t\in \mathbb{N}$
+\item $a\mid a$
+\item $a\mid 0$
+\item $1\mid b$
+\item se $a\mid b$ e $b\mid c$, allora $a\mid c$
+\item se $a\mid b$ e $a\mid c$, allora $a\mid (sb + tc)$, con $s,t\in \mathbb{Z}$
 \end{itemize}
+\paragraph{Esempi}
+$$15\mid 60,\quad 2\mid 8,\quad 4\nmid 15$$
 \subsection{Teorema dei numeri primi}
 \textit{Sia $\Pi (x)$ la quantità di numeri primi $<x$,} definita $\Pi (x) \simeq \frac{x}{\ln{(x)}}$,
 $$\Rightarrow \lim_{x\to\infty} \frac{\Pi (x)\ln{(x)}}{x}.$$
 \subsection{Teorema fondamentale dell'aritmetica}
-\paragraph{Enunciato} \textit{Ogni numero $n\in \mathbb{N}$ è un prodotto di numeri primi.}
+\paragraph{Enunciato} \textit{Ogni numero $n\in \mathbb{Z}$ è un prodotto di numeri primi.}
 $$n=p_1^{\alpha _1}p_2^{\alpha _2}\cdots p_s^{\alpha _s}$$
 Si dice \textbf{fattorizzazione} la ricerca di tale insieme di numeri primi.
 \paragraph{Definizione} \textit{Si dice Massimo Comun Divisore tra a e b, il più grande numero intero che divide a e b $[gcd(a,b)]$.}
-\paragraph{Algoritmo di Eulero}
-\paragraph{Identità di Bezout}
+\paragraph{Definizione} \textit{Dati $a,b\in \mathbb{Z}$, essi si dicono \textbf{co-primi} se e solo se $gcd(a,b)=1$.}
+\subsubsection{Algoritmo Euclideo} Oltre al classico metodo di scomposizione in fattori primi, la ricerca del massimo comun divisore tra due numeri interi è possibile attraverso il cosiddetto Algoritmo Euclideo, di natura iterativa.
 
+Supponendo di voler calcolare $gcd(r_0,r_1)$, con $r_0>r_1$, si può scrivere iterativamente:
+$$r_0=r_1\cdot q_2 + r_2$$
+$$r_1=r_2\cdot q_3 + r_3$$
+$$r_2=r_3\cdot q_4 + r_4$$
+$$\vdots$$
+dove $r_n$ e $q_n$ sono rispettivamente il resto e il quoziente della divisione tra $r_{n-1}$ e $r_{n-2}$.
+$$gcd(r_0,r_1)=r_n \Leftrightarrow r_{n+1}=0$$
+\paragraph{Esempio}
+Si calcoli $gcd(1180,482)$:
+
+$$1180=482\cdot 2 + 216$$
+$$482=216\cdot 2 + 50$$
+$$216=50\cdot 4 + 16$$
+$$50=16\cdot 3 + 2$$
+$$16 = 2\cdot 8 + 0$$
+Il resto appena precedente a $r=0$ è $r=2$, quindi $gcd(1180,482)=2$.
+\subsubsection{Identità di Bezout}
+\paragraph{Enunciato} \textit{Siano $a,b \in \mathbb{Z}$, dove almeno uno tra a e b è diverso da 0 $\Rightarrow \exists x,y \in \mathbb{Z}: ax+by=gcd(a,b)$.}
+
+Per individuare i valori $x,y$ che soddisfano l'identità di Bezout, si scrivono le espressioni dei resti a partire dalle iterazioni dell'algoritmo Euclideo
+$$r_n=r_{n-2}-r_{n-1}\cdot q_n$$
+e si sostituiscono a ritroso, svolgendo i calcoli, fino ad arrivare alla prima iterazione. In riferimento al $gcd(1180,482)$, bisogna trovare i valori $x,y: 1180x+482y=gcd(1180,482)=2$:
+
+$$216=1180-482\cdot 2$$
+$$50=482-216\cdot 2$$
+$$16=216-50\cdot 4$$
+$$2=50-16\cdot 3$$
+Si parte quindi dall'ultima identità $2=50-16\cdot 3$, con l'obiettivo di ottenere nel membro di destra un'espressione del tipo $1180x+482y$, sostituendo i valori delle costanti note dalle iterazioni precedenti:
+
+$$2=50-3\cdot(216-50\cdot 4)=50-3\cdot 216 + 12\cdot 50=13\cdot 50 - 3\cdot 216$$
+$$2=13\cdot (482-216\cdot2) - 3\cdot 216=13\cdot 482 -26\cdot 216-3\cdot 216=13\cdot 482 -29\cdot 216$$
+$$2=13\cdot 482 - 29\cdot (1180-482\cdot 2)=13\cdot 482-29\cdot 1180 + 58\cdot 482$$
+$$\Rightarrow - 1180\cdot 29 + 482\cdot 71 = 2 $$
+$$\Rightarrow (x,y)=(-29,71)$$
 
 
 \end{document}

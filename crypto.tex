@@ -167,14 +167,49 @@ dato che per ipotesi $(ab-ac)$ è un multiplo di $N$, e osservando che $N(b-c)y$
 $$\Rightarrow b\equiv c \mod{N}.$$
 \end{itemize}
 \section{Gruppi}
-\paragraph{Definizione} \textit{Definito un insieme $\mathbb{G} \neq \{\emptyset\}$ e un'operazione $*$ tale che $\forall a,b \in \mathbb{G}\Rightarrow a*b\in \mathbb{G}$, l'insieme $\mathbb{G}$ si dice \textbf{gruppo} rispetto all'operazione $*$ $[(\mathbb{G},*)]$ se:}
+\paragraph{Definizione} \textit{Definito un insieme $\mathbb{G} \neq \{\emptyset\}$ e un'operazione $*$ tale che $\forall a,b \in \mathbb{G}\Rightarrow a*b\in \mathbb{G}$, la struttura $(\mathbb{G},*)$ si dice \textbf{gruppo} se:}
 \begin{itemize}
 \item $\exists e \in \mathbb{G}: a*e=e*a=a,\quad \forall a \in \mathbb{G}$;
 \item $\exists b \in \mathbb{G}: a*b=b*a=e,\quad \forall a \in \mathbb{G}$;
 \item $(a*b)*c = a*(b*c), \quad \forall a,b,c \in \mathbb{G}$.
 \end{itemize}
-\paragraph{Definizione}\textit{$(\mathbb{Z}_N,+)$ è un gruppo Abeliano.}
-\paragraph{Definizione}\textit{$(\mathbb{Z}_N,*)$ è un gruppo $\Leftrightarrow N$ è primo. }
-\paragraph{Esempi} ...
+\paragraph{Definizione} \textit{Un gruppo $(\mathbb{G},*)$, si dice \textbf{Abeliano}, o \textbf{commutativo} se:}
+\begin{itemize}
+\item $a*b=b*a, \quad \forall a,b\in \mathbb{G}$. 
+\end{itemize}
+\paragraph{Lemma}\textit{$(\mathbb{Z}_N,+)$ è un gruppo Abeliano.}
+\paragraph{Lemma}\textit{$(\mathbb{Z}_N\setminus \{ 0\},\cdot )$ è un gruppo $\Leftrightarrow N$ è primo. }
+\paragraph{Esempi} Per verificare se una struttura $(\mathbb{G},*)$ sia un gruppo, è sufficiente applicare l'operazione considerata a tutte le possibili combinazioni degli elementi appartenenti all'insieme $\mathbb{G}$.
+
+N.B. Nel caso di insiemi $\mathbb{Z}_N$ tutte le operazioni vanno effettuate in $\mod{N}$.
+\begin{center}
+\begin{tabular}{ c | c c c c c c}
+ + & 0 & 1 & 2 & 3 & 4 & 5 \\ 
+ \hline
+ 0 & 0 & 1 & 2 & 3 & 4 & 5 \\
+ 1 & 1 & 2 & 3 & 4 & 5 & 0 \\
+ 2 & 2 & 3 & 4 & 5 & 0 & 1 \\
+ 3 & 3 & 4 & 5 & 0 & 1 & 2 \\
+ 4 & 4 & 5 & 0 & 1 & 2 & 3 \\
+ 5 & 5 & 0 & 1 & 2 & 3 & 4    
+\end{tabular}
+\end{center}
+Nella tabella si è scelto $\mathbb{Z}_6$ con l'operazione di addizione $\mod{6}$, con $e=0$. Per ogni $a$ appartenente all'insieme, esiste $b$ tale che $a+b=b+a=e=0$, e inoltre $a+e=e+a=a$.
+\begin{center}
+\textit{$\Rightarrow (\mathbb{Z}_6,+)$ è un gruppo.}
+\end{center}
+\begin{center}
+\begin{tabular}{ c | c c c }
+$\cdot$ & 1 & 2 & 3\\ 
+ \hline
+ 1 & 1 & 2 & 3 \\
+ 2 & 2 & 1 & 3 \\
+ 3 & 3 & 3 & 3 
+\end{tabular}
+\end{center}
+In questo caso si è scelta la struttura $(\mathbb{Z}_4\setminus \{ 0\},\cdot )$, dove $N=4$ non è primo. Il valore $e$ tale che $a\cdot e = e\cdot a = a$ è $1$. La seconda proprietà invece non è rispettata, poiché non esiste nessun numero appartenente all'insieme che moltiplicato per $3$, dà come risultato $e=1$.
+\begin{center}
+\textit{$\Rightarrow (\mathbb{Z}_4\setminus \{ 0\},\cdot )$ non è un gruppo.}
+\end{center}
 \end{document}
   

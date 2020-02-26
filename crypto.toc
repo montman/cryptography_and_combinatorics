@@ -21,3 +21,7 @@
 \contentsline {subsection}{\numberline {3.1}Congruenze}{6}
 \contentsline {paragraph}{Teorema}{6}
 \contentsline {paragraph}{Propriet\IeC {\`a}}{6}
+\contentsline {paragraph}{Definizione}{7}
+\contentsline {paragraph}{Lemma}{7}
+\contentsline {subsection}{\numberline {3.2}Gruppi}{7}
+\contentsline {paragraph}{Definizione}{7}

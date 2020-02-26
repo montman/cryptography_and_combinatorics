@@ -61,7 +61,7 @@ Esistono principalmente due tipologie di cifratura:
 $$15\mid 60,\quad 2\mid 8,\quad 4\nmid 15$$
 \subsection{Teorema dei numeri primi}
 \textit{Sia $\Pi (x)$ la quantità di numeri primi $<x$,} definita $\Pi (x) \simeq \frac{x}{\ln{(x)}}$,
-$$\Rightarrow \lim_{x\to\infty} \frac{\Pi (x)\ln{(x)}}{x}.$$
+$$\Rightarrow \lim_{x\to\infty} \frac{\Pi (x)\ln{(x)}}{x}=1.$$
 \subsection{Teorema fondamentale dell'aritmetica}
 \paragraph{Enunciato} \textit{Ogni numero $n\in \mathbb{Z}$ è un prodotto di numeri primi.}
 $$n=p_1^{\alpha _1}p_2^{\alpha _2}\cdots p_s^{\alpha _s}$$
@@ -144,6 +144,17 @@ $$a=q_1\cdot N + r$$
 $$b=q_2\cdot N + r$$
 $$a-b=(q_1-q_2)\cdot N$$
 $$a-b=kN\Rightarrow a\equiv b\equiv r \mod{N}$$
-
+\paragraph{Definizione} \textit{Si denota con $\mathbb{Z}_N$ l'insieme di tutti i possibili resti in una divisione per $N$}
+$$\mathbb{Z}_N=\{0,1,2,\cdots,N-1\}$$
+\paragraph{Lemma} \textit{Siano $a,b,c,d\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\} : a\equiv b, c\equiv d \mod{N}$}
+$$\Rightarrow a+c\equiv b+d,\quad a-c\equiv b-d,\quad a\cdot c\equiv b\cdot d \mod{N}$$
+\textit{per dimostrarlo si utilizzi la definizione di congruenza $a=b+kN$.}
+\subsection{Gruppi}
+\paragraph{Definizione} \textit{Definito un insieme $\mathbb{G} \neq \{\emptyset\}$ e un'operazione $*$ tale che $\forall a,b \in \mathbb{G}\Rightarrow a*b\in \mathbb{G}$, l'insieme $\mathbb{G}$ si dice \textbf{gruppo} rispetto all'operazione $*$ se:}
+\begin{itemize}
+\item $\exists e \in \mathbb{G}: a*e=e*a=a,\quad \forall a \in \mathbb{G}$;
+\item $\exists b \in \mathbb{G}: a*b=b*a=e,\quad \forall a \in \mathbb{G}$;
+\item $(a*b)*c = a*(b*c), \quad \forall a,b,c \in \mathbb{G}$.
+\end{itemize}
 \end{document}
   

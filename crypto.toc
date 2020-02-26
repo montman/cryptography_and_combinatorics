@@ -27,3 +27,6 @@
 \contentsline {paragraph}{Proposizione}{8}
 \contentsline {section}{\numberline {3.3}Gruppi}{8}
 \contentsline {paragraph}{Definizione}{8}
+\contentsline {paragraph}{Definizione}{8}
+\contentsline {paragraph}{Definizione}{8}
+\contentsline {paragraph}{Esempi}{8}

@@ -156,18 +156,25 @@ $$a^k\equiv b^k \mod{N}.$$
 \paragraph{Proposizione} 
 \textit{Siano $a,b,c\in \mathbb{Z}, N\in \mathbb{N}\setminus \{ 0\},\quad a\neq 0 $}:
 \begin{itemize}
-\item $ab\equiv ac \mod{aN} \Rightarrow b=c\mod{N}$, poiché se
+\item $ab\equiv ac \mod{aN} \Rightarrow b\equiv c\mod{N}$, poiché se
 $$ab\equiv ac \mod{aN} \Rightarrow \exists k\in \mathbb{Z}: ab=kaN+ac\Rightarrow b=kN+c$$
 $$\Rightarrow b\equiv c \mod{N}$$
-\item $ab\equiv ac \mod{N}, gcd(a,N)=1 \Rightarrow b=c\mod{N}$, poiché
-$$(dimostrazione)$$
+\item $ab\equiv ac \mod{N}, gcd(a,N)=1 \Rightarrow b\equiv c\mod{N}$, poiché se
+$$gcd(a,N)=1 \Rightarrow \exists x,y\in \mathbb{Z}: ax+Ny=1,$$
+si moltiplichi l'equazione per $(b-c)$, ottenendo:
+$$(ab-ac)y+n(b-c)y=b-c$$
+dato che per ipotesi $(ab-ac)$ è un multiplo di $N$, e osservando che $N(b-c)y$ è un multiplo di $N$, si deduce che anche $b-c$ è un multiplo di $N$.
+$$\Rightarrow b\equiv c \mod{N}.$$
 \end{itemize}
 \section{Gruppi}
-\paragraph{Definizione} \textit{Definito un insieme $\mathbb{G} \neq \{\emptyset\}$ e un'operazione $*$ tale che $\forall a,b \in \mathbb{G}\Rightarrow a*b\in \mathbb{G}$, l'insieme $\mathbb{G}$ si dice \textbf{gruppo} rispetto all'operazione $*$ se:}
+\paragraph{Definizione} \textit{Definito un insieme $\mathbb{G} \neq \{\emptyset\}$ e un'operazione $*$ tale che $\forall a,b \in \mathbb{G}\Rightarrow a*b\in \mathbb{G}$, l'insieme $\mathbb{G}$ si dice \textbf{gruppo} rispetto all'operazione $*$ $[(\mathbb{G},*)]$ se:}
 \begin{itemize}
 \item $\exists e \in \mathbb{G}: a*e=e*a=a,\quad \forall a \in \mathbb{G}$;
 \item $\exists b \in \mathbb{G}: a*b=b*a=e,\quad \forall a \in \mathbb{G}$;
 \item $(a*b)*c = a*(b*c), \quad \forall a,b,c \in \mathbb{G}$.
 \end{itemize}
+\paragraph{Definizione}\textit{$(\mathbb{Z}_N,+)$ è un gruppo Abeliano.}
+\paragraph{Definizione}\textit{$(\mathbb{Z}_N,*)$ è un gruppo $\Leftrightarrow N$ è primo. }
+\paragraph{Esempi} ...
 \end{document}
   

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.23)  27 FEB 2020 00:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.23)  27 FEB 2020 12:18
 entering extended mode
 **./crypto.tex
 (crypto.tex
@@ -508,23 +508,32 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ("C:\Users\Pierluigi\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontend
 layer\tikz\libraries\tikzlibrarypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (crypto.aux)
+)
+("C:\Users\Pierluigi\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontend
+layer\tikz\libraries\tikzlibraryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Pierluigi\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\librarie
+s\pgflibraryarrows.code.tex"
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen165
+)) (crypto.aux)
 \openout1 = `crypto.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Info: Redefining \it@ocap on input line 12.
-LaTeX Info: Redefining \it@ccap on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Info: Redefining \it@ocap on input line 13.
+LaTeX Info: Redefining \it@ccap on input line 13.
 
 
 File italian.ldf warning: 
@@ -532,20 +541,20 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 12.
+italian.ldf    on input line 13.
 
 ABD: EveryShipout initializing macros
 ("C:\Users\Pierluigi\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count128
-\scratchdimen=\dimen165
+\scratchdimen=\dimen166
 \scratchbox=\box39
 \nofMPsegments=\count129
 \nofMParguments=\count130
 \everyMPshowfont=\toks33
 \MPscratchCnt=\count131
-\MPscratchDim=\dimen166
+\MPscratchDim=\dimen167
 \MPnumerator=\count132
 \makeMPintoPDFobject=\count133
 \everyMPtoPDFconversion=\toks34
@@ -613,13 +622,13 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
 
 ("C:\Users\Pierluigi\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.
 fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 ("C:\Users\Pierluigi\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.
 fd"
@@ -635,13 +644,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Capitolo 1.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
 ("C:\Users\Pierluigi\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd
 "
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
  [2
 
 ] [3]
@@ -654,13 +663,13 @@ Capitolo 3.
 
 ] [8] [9] (crypto.aux) ) 
 Here is how much of TeX's memory you used:
- 13666 strings out of 492970
- 269945 string characters out of 3124817
- 321142 words of memory out of 3000000
- 17261 multiletter control sequences out of 15000+200000
+ 14265 strings out of 492970
+ 285676 string characters out of 3124817
+ 329475 words of memory out of 3000000
+ 17854 multiletter control sequences out of 15000+200000
  14667 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,14n,50p,790b,871s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,14n,60p,790b,937s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Pierluigi/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Pierluigi/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Pierluigi/A
@@ -682,7 +691,7 @@ cm/cmsy10.pfb><C:/Users/Pierluigi/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmsy7.pfb><C:/Users/Pierluigi/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Pierluigi/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on crypto.pdf (10 pages, 206232 bytes).
+Output written on crypto.pdf (10 pages, 207042 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

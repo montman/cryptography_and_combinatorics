@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
 \begin{document}
 \maketitle
 \tableofcontents
@@ -30,8 +31,25 @@ Essa si suddivide in \textbf{crittografia}, che studia la progettazione di tali 
 \end{tikzpicture}
 \end{center}
 In generale in una comunicazione un messaggio \textbf{m} viene cifrato all'origine attraverso un algoritmo di cifratura \textbf{\(ENC\)} e una chiave di cifratura \textbf{\textit{k}} e viene decifrato alla destinazione con un algoritmo di decifratura \textbf{\(DEC\)} (idealmente \(ENC^{-1}\)) e una chiave di decifratura \textbf{\textit{k}}. L'algoritmo di cifratura è solitamente noto a tutte le parti, ma è la chiave ad essere segreta.
-\[ENC(m,k)=c\]
-\[DEC(c,k)=m\]
+$$ENC(m,k)=c$$
+$$DEC(c,k)=m$$
+\tikzstyle{int}=[draw, fill=white!20, minimum size=2em]
+\tikzstyle{init} = [pin edge={to-,thin,black}]
+\tikzstyle{branch}=[fill,shape=circle,minimum size=3pt,inner sep=0pt]
+\begin{center}
+\begin{tikzpicture}[node distance=3cm,auto,>=latex']
+    \node [int,pin={[init]above:$k$}] (a) {$ENC(k,m)$};
+    \node [int] (b) [left of=a, node distance=3cm]{Alice};
+    \node [int,pin={[init]above:$k$}] (c) [right of=a] {$DEC(k,c)$};
+    \node [int] (end) [right of=c, node distance=3cm]{Bob};
+    \draw[->] (b) edge node {$m$} (a);
+    \draw[->] (a) edge node [name=crypt] {$c$} (c);
+    \draw[->] (c) edge node {$m$} (end) ;
+    \node [int] (e) [below of=crypt, node distance=2cm]{Eve};
+    \draw [->] (crypt) -- (e);
+\end{tikzpicture}
+\end{center}
+
 Ipotizzando una comunicazione tra Alice e Bob, dove entrambi possiedono le chiavi di cifratura, un soggetto esterno malintenzionato, Eve (a.k.a. Evil), potrebbe:
 \begin{itemize}
 \item leggere il messaggio;
@@ -209,7 +227,7 @@ $\cdot$ & 1 & 2 & 3\\
 \end{center}
 In questo caso si è scelta la struttura $(\mathbb{Z}_4\setminus \{ 0\},\cdot )$, dove $N=4$ non è primo. Il valore $e$ tale che $a\cdot e = e\cdot a = a$ è $1$. La seconda proprietà invece non è rispettata, poiché non esiste nessun numero appartenente all'insieme che moltiplicato per $3$, dà come risultato $e=1$.
 \begin{center}
-\textit{$\Rightarrow (\mathbb{Z}_4\setminus \{ 0\},\cdot )$ non è un gruppo.}
+\textit{$\Rightarrow (\mathbb{Z}_4\setminus \{ 0\},\cdot )$ \textbf{non} è un gruppo.}
 \end{center}
 \end{document}
   

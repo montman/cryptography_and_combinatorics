@@ -1,7 +1,7 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
 \contentsline {chapter}{\numberline {1}Introduzione}{2}
-\contentsline {paragraph}{Tipologie di cifratura}{2}
+\contentsline {paragraph}{Tipologie di cifratura}{3}
 \contentsline {chapter}{\numberline {2}Teoria dei numeri}{4}
 \contentsline {section}{\numberline {2.1}Divisibilit\IeC {\`a}}{4}
 \contentsline {paragraph}{Definizione}{4}
